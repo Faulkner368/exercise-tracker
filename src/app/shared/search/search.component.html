@@ -1,0 +1,12 @@
+<div class="form-group mb-3">
+  <label class="d-block" for="search"></label>
+    <input
+      type="text"
+      class="form-control search-bar"
+      id="search"
+      name="search"
+      [(ngModel)]="searchTerm"
+      (ngModelChange)="onChange()"
+      aria-describedby="search"
+      placeholder="Search...">
+</div>

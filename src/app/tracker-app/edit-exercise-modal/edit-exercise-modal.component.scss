@@ -1,0 +1,18 @@
+@import "../../../assets/theme/variables";
+
+.exercise__edit-input {
+  width: 100%;
+  border: 1px solid $white;
+  border-radius: $border-radius;
+  padding: $gap;
+  background-color: $bg;
+  color: $white;
+
+  &:not(:last-child) {
+    margin-bottom: $gap;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}

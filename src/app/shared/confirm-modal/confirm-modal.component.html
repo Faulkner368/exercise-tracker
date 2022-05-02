@@ -1,0 +1,27 @@
+<div class="modal-dark">
+  <div class="modal-header">
+    <h5 class="modal-title pull-left">Confirm</h5>
+    <button
+      type="button"
+      class="btn btn-link"
+      aria-label="Close"
+      (click)="bsModalRef.hide()"
+    >
+      <fa-icon
+        [icon]="icons?.windowClose"
+        sr-only="cancel edit exercise modal"
+      ></fa-icon>
+    </button>
+  </div>
+  <div class="modal-body">
+    {{ confirmationText }}
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="confirm()">
+      Yes
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="cancel()">
+      Cancel
+    </button>
+  </div>
+</div>

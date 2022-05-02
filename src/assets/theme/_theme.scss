@@ -1,0 +1,19 @@
+@use "sass:math";
+
+$primary: #0d6efd;
+$secondary: $white;
+$tertiary: $white;
+
+body {
+  background-image: $bg-color;
+  color: $white;
+}
+
+input {
+  margin-bottom: $gap;
+}
+
+.row {
+  width: 100%;
+  margin: 0;
+}

@@ -1,0 +1,14 @@
+@use "sass:math";
+@import "../../../../assets/theme/variables";
+
+:host {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.progress-bar-info {
+  background-color: orange;
+}

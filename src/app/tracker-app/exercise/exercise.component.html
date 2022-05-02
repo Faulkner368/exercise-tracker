@@ -1,0 +1,26 @@
+<div class="exercise">
+  <span class="exercise__label" [title]="exercise.label">{{
+    exercise.label
+  }}</span>
+  <span class="exercise__expiry-date">{{
+    exercise.date | date: "dd LLL yy"
+  }}</span>
+  <div class="exercise__actions">
+    <button
+      type="button"
+      class="btn btn-link exercise__btn"
+      (click)="deleteExercise()"
+      aria-controls="delete-exercise"
+    >
+      <fa-icon [icon]="icons?.bin" sr-only="delete exercise"></fa-icon>
+    </button>
+    <button
+      type="button"
+      class="btn btn-link exercise__btn"
+      (click)="editModal()"
+      aria-controls="edit-exercise"
+    >
+      <fa-icon [icon]="icons?.eye" sr-only="edit exercise"></fa-icon>
+    </button>
+  </div>
+</div>

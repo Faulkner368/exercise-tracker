@@ -1,0 +1,28 @@
+@use "sass:math";
+@import "../../../assets/theme/variables";
+
+:host {
+  height: 100%;
+  width: 100%;
+  display: inherit;
+  padding: $gap $gap;
+  justify-content: center;
+}
+
+.stats__card {
+  min-height: $gap * 15;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats__large-text {
+  font-size: xxx-large;
+  font-weight: 600;
+}
+
+@media screen and (min-width: $tablet-width) {
+  :host {
+    height: 100vh;
+  }
+}

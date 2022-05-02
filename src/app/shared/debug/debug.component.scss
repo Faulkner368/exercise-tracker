@@ -1,0 +1,8 @@
+@use "sass:math";
+@import "../../../assets/theme/variables";
+
+.debug {
+  background-color: $black;
+  padding: $gap;
+  color: $white;
+}

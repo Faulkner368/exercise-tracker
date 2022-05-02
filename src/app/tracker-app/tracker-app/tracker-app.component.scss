@@ -1,0 +1,53 @@
+@use "sass:math";
+@import "../../../assets/theme/variables";
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app__card {
+  background-color: $bg;
+  display: flex;
+  box-shadow: 4px 20px 24px -2px black;
+  border-radius: 6px;
+  color: $white;
+  overflow: hidden;
+  height: 90vh;
+  padding: $gap * 2;
+  min-width: $mobile-width * 0.9;
+  max-width: $mobile-width * 0.9;
+}
+
+::-webkit-scrollbar {
+  width: math.div($gap, 4);
+}
+
+::-webkit-scrollbar-thumb {
+  border: $border-radius solid $white;
+}
+
+.app__exercise-list {
+  overflow-y: scroll;
+}
+
+.app__actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: $gap * 2;
+}
+
+@media screen and (min-width: $tablet-width) {
+  .app__card {
+    min-width: $tablet-width * 0.8;
+  }
+}
+
+@media screen and (min-width: $desktop-width) {
+  .app__card {
+    min-width: $desktop-width * 0.7;
+  }
+}

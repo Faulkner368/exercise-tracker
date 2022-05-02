@@ -1,0 +1,12 @@
+.dropdown-toggle {
+  border: $border-radius;
+
+  &::after {
+    content: none !important;
+  }
+}
+
+.dropdown-item {
+  padding-top: $gap;
+  padding-bottom: $gap;
+}

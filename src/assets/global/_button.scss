@@ -1,0 +1,23 @@
+.btn {
+  padding: $gap $gap * 2;
+
+  &:disabled,
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.1;
+  }
+}
+
+.btn-primary {
+
+  &:disabled,
+  &.disabled {
+    pointer-events: none;
+    border-color: $border;
+		color: $white;
+  }
+}
+
+.btn-link {
+  padding: 0;
+}

@@ -1,0 +1,124 @@
+<form
+  name="add-exercise-form"
+  (ngSubmit)="
+    f.form.valid &&
+      !lodashConst.isEqual(this.preEditConfig, this.config) &&
+      saveConfig()
+  "
+  #f="ngForm"
+  (keydown.enter)="$event.preventDefault()"
+>
+  <div class="card config__card">
+    <h5>App Configuration</h5>
+    <div class="config__content">
+      <ng-container>
+        <label for="label">Initial Goal (miles):</label>
+        <input
+          type="number"
+          min="1"
+          class="config__input"
+          #initialGoal="ngModel"
+          name="initial-goal-miles"
+          id="initial-goal-miles"
+          [(ngModel)]="config.initialGoalinMiles"
+          aria-label="Initial goal in miles"
+          required
+        />
+        <p
+          class="input__validation-feedback"
+          *ngIf="f.submitted && initialGoal.invalid"
+        >
+          Initial goal can't be a negative number.
+        </p>
+      </ng-container>
+
+      <ng-container>
+        <label for="label">Main Goal (miles):</label>
+        <input
+          type="number"
+          min="1"
+          class="config__input"
+          #mainGoal="ngModel"
+          name="main-goal-miles"
+          id="main-goal-miles"
+          [(ngModel)]="config.goalInMiles"
+          aria-label="Main goal in miles"
+          required
+        />
+        <p
+          class="input__validation-feedback"
+          *ngIf="f.submitted && mainGoal.invalid"
+        >
+          Main goal can't be a negative number.
+        </p>
+      </ng-container>
+
+      <ng-container>
+        <label for="label">Stretch Goal (miles):</label>
+        <input
+          type="number"
+          min="1"
+          class="config__input"
+          #stretchGoal="ngModel"
+          name="stretch-goal-miles"
+          id="stretch-goal-miles"
+          [(ngModel)]="config.stretchGoalInMiles"
+          aria-label="Stretch goal in miles"
+          required
+        />
+        <p
+          class="input__validation-feedback"
+          *ngIf="f.submitted && stretchGoal.invalid"
+        >
+          Stretch goal can't be a negative number.
+        </p>
+      </ng-container>
+
+      <ng-container>
+        <label for="label">Number of Days:</label>
+        <input
+          type="number"
+          min="0"
+          class="config__input"
+          #numberDays="ngModel"
+          name="number-of-days"
+          id="number-of-days"
+          [(ngModel)]="config.numberOfDays"
+          aria-label="number of days to complete goal"
+          required
+        />
+        <p
+          class="input__validation-feedback"
+          *ngIf="f.submitted && numberDays.invalid"
+        >
+          Number of days to complete goal can't be a negative number.
+        </p>
+      </ng-container>
+
+      <p
+        class="input__validation-feedback"
+        *ngIf="
+          f.submitted && lodashConst.isEqual(this.preEditConfig, this.config)
+        "
+      >
+        There has been no changes to save.
+      </p>
+
+      <p
+        class="input__validation-feedback"
+        *ngIf="
+          f.submitted && lodashConst.isEqual(this.preEditConfig, this.config)
+        "
+      >
+        There has been no changes to save.
+      </p>
+    </div>
+
+    <div class="config__actions">
+      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="button" class="btn btn-secondary" (click)="goBack()">
+        Back
+      </button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,68 @@
+<div class="row mb-4">
+  <div class="col-12 col-md-3 mb-4 mb-md-0">
+    <div class="card stats__card">
+      <button type="button" class="btn btn-link" (click)="goBack()">
+        <fa-icon
+          [icon]="icons?.back"
+          size="6x"
+          sr-only="Go back to exercise page"
+          title="Go back to exercise page"
+        ></fa-icon>
+      </button>
+    </div>
+  </div>
+  <div class="col-12 col-md-3 mb-4 mb-md-0">
+    <div class="card stats__card">
+      <et-mile-count-stat
+        header="Initial Goal"
+        [goal]="trackerService.pcConfig.initialGoalinMiles"
+        [progress]="trackerService.totalMiles"
+      ></et-mile-count-stat>
+    </div>
+  </div>
+  <div class="col-12 col-md-3 mb-4 mb-md-0">
+    <div class="card stats__card">
+      <et-mile-count-stat
+        header="Main Goal"
+        [goal]="trackerService.pcConfig.goalInMiles"
+        [progress]="trackerService.totalMiles"
+      ></et-mile-count-stat>
+    </div>
+  </div>
+  <div class="col-12 col-md-3">
+    <div class="card stats__card">
+      <et-mile-count-stat
+        header="Stretch Goal"
+        [goal]="trackerService.pcConfig.stretchGoalInMiles"
+        [progress]="trackerService.totalMiles"
+      ></et-mile-count-stat>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-12 col-md-4 mb-4 mb-md-0">
+    <div class="card stats__card">
+      <et-goal-progress-stat
+        header="Initial Goal"
+        [goal]="trackerService.pcConfig.initialGoalinMiles"
+      ></et-goal-progress-stat>
+    </div>
+  </div>
+  <div class="col-12 col-md-4 mb-4 mb-md-0">
+    <div class="card stats__card">
+      <et-goal-progress-stat
+        header="Main Goal"
+        [goal]="trackerService.pcConfig.goalInMiles"
+      ></et-goal-progress-stat>
+    </div>
+  </div>
+  <div class="col-12 col-md-4">
+    <div class="card stats__card">
+      <et-goal-progress-stat
+        header="Stretch Goal"
+        [goal]="trackerService.pcConfig.stretchGoalInMiles"
+      ></et-goal-progress-stat>
+    </div>
+  </div>
+</div>

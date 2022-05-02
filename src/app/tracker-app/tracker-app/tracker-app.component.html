@@ -1,0 +1,153 @@
+<div class="card app__card">
+  <app-search (searching)="search($event)"></app-search>
+  <div class="app__exercise-list">
+    <et-exercise
+      *ngFor="let exercise of allExercises"
+      [exercise]="exercise"
+      (onDelete)="deleteExercise($event)"
+      (onEdit)="updateExercises()"
+      title="Edit exercise"
+    ></et-exercise>
+  </div>
+  <div class="app__actions">
+    <div class="btn-group" dropdown #dropdown="bs-dropdown" [dropup]="true">
+      <button
+        id="button-dropup"
+        dropdownToggle
+        type="button"
+        class="btn btn-primary dropdown-toggle"
+        aria-controls="dropdown-dropup"
+        (click)="$event.stopPropagation()"
+      >
+        <span class="me-2">Actions</span>
+        <fa-icon
+          (click)="$event.stopPropagation()"
+          [icon]="dropdown.isOpen ? icons?.chevronDown : icons?.chevronUp"
+          sr-only="delete exercise"
+        ></fa-icon>
+      </button>
+      <ul
+        id="dropdown-dropup"
+        *dropdownMenu
+        class="dropdown-menu"
+        role="menu"
+        aria-labelledby="button-dropup"
+      >
+        <li role="menuitem">
+          <button class="dropdown-item" type="button" (click)="addExercise()">
+            <fa-icon
+              class="me-2"
+              [icon]="icons?.add"
+              sr-only="add new file"
+            ></fa-icon>
+            Add Exercise
+          </button>
+        </li>
+        <li role="menuitem">
+          <button type="button" class="dropdown-item" (click)="viewStats()">
+            <fa-icon
+              class="me-2"
+              [icon]="icons?.chart"
+              sr-only="View Stats"
+            ></fa-icon>
+            View Stats
+          </button>
+        </li>
+        <li role="menuitem">
+          <a
+            [href]="saveAsCsvURL"
+            download="exercise-tracker-exercises.csv"
+            class="dropdown-item"
+          >
+            <fa-icon
+              class="me-2"
+              [icon]="icons?.download"
+              sr-only="save data as CSV"
+            ></fa-icon>
+            Download CSV
+          </a>
+        </li>
+        <li role="menuitem">
+          <a
+            [href]="saveAsJsonURL"
+            download="exercise-tracker-exercises.json"
+            class="dropdown-item"
+          >
+            <fa-icon
+              class="me-2"
+              [icon]="icons?.download"
+              sr-only="save data as JSON"
+            ></fa-icon>
+            Download JSON
+          </a>
+        </li>
+        <li role="menuitem">
+          <button
+            type="button"
+            class="dropdown-item"
+            (click)="csvUpload.click()"
+          >
+            <fa-icon
+              class="me-2"
+              [icon]="icons?.upload"
+              sr-only="upload CSV file"
+            ></fa-icon>
+            Upload CSV
+          </button>
+          <input
+            type="file"
+            [multiple]="false"
+            accept="text/csv"
+            #csvUpload
+            aria-label="upload-csv"
+            class="d-none"
+            (change)="confirmUpload($event, uploadFileTypes.CSV)"
+          />
+        </li>
+        <li role="menuitem">
+          <button
+            type="button"
+            class="dropdown-item"
+            (click)="jsonUpload.click()"
+          >
+            <fa-icon
+              class="me-2"
+              [icon]="icons?.upload"
+              sr-only="upload JSON file"
+            ></fa-icon>
+            Upload JSON
+          </button>
+          <input
+            type="file"
+            [multiple]="false"
+            accept="application/json"
+            #jsonUpload
+            aria-label="upload-csv"
+            class="d-none"
+            (change)="confirmUpload($event, uploadFileTypes.JSON)"
+          />
+        </li>
+        <li role="menuitem">
+          <button type="button" class="dropdown-item" (click)="goToSettings()">
+            <fa-icon
+              class="me-2"
+              [icon]="icons?.cog"
+              sr-only="go to app settings page"
+            ></fa-icon>
+            App Settings
+          </button>
+        </li>
+        <li role="menuitem">
+          <button type="button" class="dropdown-item" (click)="clearCache()">
+            <fa-icon
+              class="me-2"
+              [icon]="icons?.trash"
+              sr-only="clear exercises browser cache"
+            ></fa-icon>
+            Clear Cache
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

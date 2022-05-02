@@ -1,0 +1,9 @@
+.card {
+  background-color: $bg;
+  display: flex;
+  box-shadow: 4px 20px 24px -2px black;
+  border-radius: 6px;
+  color: $white;
+  overflow: hidden;
+  padding: $gap * 2;
+}

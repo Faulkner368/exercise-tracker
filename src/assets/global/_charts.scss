@@ -1,0 +1,38 @@
+ngx-charts-advanced-pie-chart {
+  div {
+  }
+}
+
+.advanced-pie-legend-wrapper {
+  .total-value,
+  .total-label {
+    display: none;
+  }
+
+  .legend-items-container {
+    .legend-items {
+      white-space: normal !important;
+
+      .legend-item {
+        .item-value,
+        .item-percent {
+          display: none;
+        }
+
+        .item-label {
+          margin-top: 0 !important;
+        }
+
+        .item-color {
+          height: 22px !important;
+        }
+
+        &:hover {
+          .item-label {
+            color: $white !important;
+          }
+        }
+      }
+    }
+  }
+}

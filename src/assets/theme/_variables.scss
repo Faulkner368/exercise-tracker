@@ -1,0 +1,19 @@
+$white: #ffffff;
+$black: #000000;
+$bg: #16161d;
+$bg-color: linear-gradient(135deg, #f02a73, #218aae 69%, #20a7ac 89%);
+$bg-light: lighten($bg, 10%);
+$bg-dark: darken($bg, 10%);
+$btn-color-primary: #0d6efd;
+
+$gap: 0.625rem;
+
+$font-color: $white;
+
+$border-radius: 3px;
+$border: 1px;
+$border-color: $white;
+
+$mobile-width: 375px;
+$tablet-width: 768px;
+$desktop-width: 1024px;

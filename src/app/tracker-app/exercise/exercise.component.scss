@@ -1,0 +1,29 @@
+@use "sass:math";
+@import "../../../assets/theme/variables";
+
+.exercise {
+  padding: $gap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.exercise__label {
+  text-transform: capitalize;
+  width: math.div(100%, 3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.exercise__expiry-date {
+  display: flex;
+  width: math.div(100%, 3);
+  justify-content: center;
+}
+.exercise__actions {
+  display: flex;
+  width: math.div(100%, 3);
+}
+.exercise__btn {
+  margin-left: auto;
+}

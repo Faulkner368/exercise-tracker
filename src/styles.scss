@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+@import "assets/theme/variables";
+@import "assets/theme/theme";
+@import "assets/global/button";
+@import "assets/global/card";
+@import "assets/global/modal";
+@import "assets/global/input";
+@import "assets/global/dropdown";
+@import "assets/global/menu";
+@import "assets/global/charts";
+@import "assets/global/progress-bar";

@@ -1,0 +1,64 @@
+@use "sass:math";
+@import "../../../assets/theme/variables";
+
+:host {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.config__card {
+  height: 90vh;
+  min-width: $mobile-width * 0.9;
+  max-width: $mobile-width * 0.9;
+}
+
+.config__content {
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: math.div($gap, 4);
+}
+
+::-webkit-scrollbar-thumb {
+  border: $border-radius solid $white;
+}
+
+.config__input {
+  width: 100%;
+  border: 1px solid $white;
+  border-radius: $border-radius;
+  padding: $gap;
+  background-color: $bg;
+  color: $white;
+
+  &:not(:last-child) {
+    margin-bottom: $gap * 2;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.config__actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: $gap * 2;
+}
+
+@media screen and (min-width: $tablet-width) {
+  .config__card {
+    min-width: $tablet-width * 0.8;
+  }
+}
+
+@media screen and (min-width: $desktop-width) {
+  .config__card {
+    min-width: $desktop-width * 0.7;
+  }
+}

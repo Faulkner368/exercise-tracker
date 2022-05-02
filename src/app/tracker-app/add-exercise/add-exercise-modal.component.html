@@ -1,0 +1,112 @@
+<form
+  name="add-exercise-form"
+  (ngSubmit)="f.form.valid && addExercise()"
+  #f="ngForm"
+  (keydown.enter)="$event.preventDefault()"
+>
+  <div class="modal-dark">
+    <div class="modal-header">
+      <h5 class="modal-title pull-left">Add Exercise</h5>
+      <button
+        type="button"
+        class="btn btn-link"
+        aria-label="Close"
+        (click)="bsModalRef.hide()"
+      >
+        <fa-icon
+          [icon]="icons?.windowClose"
+          sr-only="cancel add exercise modal"
+        ></fa-icon>
+      </button>
+    </div>
+    <div class="modal-body">
+      <fieldset>
+        <legend class="m-0" sr-only="Add Exercise"></legend>
+
+        <ng-container>
+          <label for="label">Exercise:</label>
+          <input
+            #label="ngModel"
+            name="label"
+            id="label"
+            type="text"
+            class="exercise__add-input"
+            [(ngModel)]="payload.label"
+            aria-label="exercise label"
+            pattern="^[^,]+$"
+            list="existing-labels"
+            autocomplete="off"
+            required
+          />
+          <datalist id="existing-labels">
+            <option
+              *ngFor="let option of trackerService.exerciseLabels"
+              [value]="option"
+            >
+              {{ option }}
+            </option>
+          </datalist>
+          <p
+            class="input__validation-feedback"
+            *ngIf="f.submitted && label.invalid"
+          >
+            Exercise label can not be empty or have commas.
+          </p>
+        </ng-container>
+
+        <ng-container>
+          <label for="label">Date:</label>
+          <input
+            aria-label="exercise date"
+            [(ngModel)]="payload.date"
+            #exerciseDate="ngModel"
+            class="exercise__add-input"
+            name="date"
+            id="date"
+            bsDatepicker
+            [bsConfig]="datePickerConfig"
+            type="text"
+            required
+          />
+          <p
+            class="input__validation-feedback"
+            *ngIf="f.submitted && exerciseDate.invalid"
+          >
+            Exercise requires a date.
+          </p>
+        </ng-container>
+
+        <ng-container>
+          <label for="label">Miles:</label>
+          <input
+            type="number"
+            min="0"
+            class="exercise__add-input"
+            #miles="ngModel"
+            name="miles"
+            id="miles"
+            [(ngModel)]="payload.miles"
+            aria-label="exercise distance in miles"
+            required
+          />
+          <p
+            class="input__validation-feedback"
+            *ngIf="f.submitted && miles.invalid"
+          >
+            Miles can't be a negative number.
+          </p>
+        </ng-container>
+      </fieldset>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary">Add</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="bsModalRef.hide()"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</form>
