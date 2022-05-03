@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { ExerciseSession } from '../../models/exercise-session.model';
 import { TrackerService } from '../../tracker.service';
 
@@ -15,6 +16,8 @@ export class DailyMileageStatComponent implements OnInit {
     public dailyGoal: number;
     private isTodayDone: boolean = false;
     private today: Date = new Date();
+    public goalComplete: boolean = false;
+    public completed = faCheck
 
     constructor(private trackerService: TrackerService) { }
 
@@ -23,6 +26,7 @@ export class DailyMileageStatComponent implements OnInit {
     }
 
     public ngOnInit(): void {
+        this.goalComplete = this.progress >= this.goal;
         this.isTodayDone = this.exercises.some(ex => (ex.date.getDay() + 1) === (this.today.getDate() + 1));
         this.daysRemaining = this.calculateDaysRemaining();
         this.dailyGoal = this.calculateDailyGoal();

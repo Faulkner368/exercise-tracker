@@ -1,4 +1,17 @@
-<span class="stats__text-large">
-  {{ progress }} / {{ goal }} <span class="stats__text-small">(mi)</span></span
->
-<span>{{ header }}</span>
+<ng-container *ngIf="!goalComplete">
+  <span class="stats__text-large">
+    {{ progress }} / {{ goal }}
+    <span class="stats__text-small">(mi)</span></span
+  >
+  <span>{{ header }}</span>
+</ng-container>
+
+<ng-container *ngIf="goalComplete">
+  <fa-icon
+    [icon]="completed"
+    [styles]="{ stroke: 'green', color: 'green' }"
+    size="6x"
+    sr-only="Go back to exercise page"
+    title="Go back to exercise page"
+  ></fa-icon>
+</ng-container>
