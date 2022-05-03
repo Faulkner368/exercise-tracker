@@ -21,6 +21,7 @@ import { GoalProgressStatComponent } from './stats/goal-progress-stat/goal-progr
 import { ConfigComponent } from './config/config.component';
 import { DebugComponent } from '../shared/debug/debug.component';
 import { MileCountStatComponent } from './stats/mile-count-stat/mile-count-stat.component';
+import { DailyMileageStatComponent } from './stats/daily-mileage-stat/daily-mileage-stat.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MileCountStatComponent } from './stats/mile-count-stat/mile-count-stat.
     GoalProgressStatComponent,
     ConfigComponent,
     DebugComponent,
-    MileCountStatComponent
+    MileCountStatComponent,
+    DailyMileageStatComponent
   ],
   imports: [
     CommonModule,

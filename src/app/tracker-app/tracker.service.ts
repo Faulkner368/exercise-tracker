@@ -35,8 +35,9 @@ export class TrackerService {
         return [...SESSSION_LABELS, ...this.allExercises.map(exercise => exercise.label)];
     }
 
-    public get totalMiles(): number {
-        return this.allExercises.reduce((accumulator, current) => accumulator + current.miles, 0);
+    public get milesCompleted(): number {
+        return this.allExercises.reduce((accumulator, current) => 
+        accumulator + current.miles, 0);
     }
 
     private loadConfig(): void {

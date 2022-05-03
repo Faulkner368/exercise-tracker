@@ -1,0 +1,21 @@
+@use "sass:math";
+@import "../../../../assets/theme/variables";
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.stats__text {
+  &-large {
+    font-size: xxx-large;
+    font-weight: 600;
+  }
+
+  &-small {
+    font-size: small;
+    font-weight: 400;
+  }
+}

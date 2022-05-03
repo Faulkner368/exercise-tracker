@@ -16,8 +16,7 @@ export class GoalProgressStatComponent implements OnInit {
     constructor(private trackerService: TrackerService) { }
 
     public ngOnInit(): void {
-        this.actualMilesComplete = this.trackerService.allExercises.reduce((accumulator, current) => 
-            accumulator + current.miles, 0);
+        this.actualMilesComplete = this.trackerService.milesCompleted;
         this.goalProgress = Math.ceil((this.actualMilesComplete / this.goal) * 100);
         this.barColor = this.populateBarColor();
     }
