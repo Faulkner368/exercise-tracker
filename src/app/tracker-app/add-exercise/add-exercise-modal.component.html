@@ -38,7 +38,7 @@
             autocomplete="off"
             required
           />
-          <datalist id="existing-labels">
+          <datalist id="existing-labels" role="listbox">
             <option
               *ngFor="let option of trackerService.exerciseLabels"
               [value]="option"
