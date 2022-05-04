@@ -32,9 +32,7 @@ export class TrackerService {
     }
 
     public get exerciseLabels(): string[] {
-        const uniqueLabels = this.uniqueSetOfExerciseLabels();
-        SESSSION_LABELS.map(l => uniqueLabels.includes(l) ? undefined : uniqueLabels.push(l));
-        return uniqueLabels
+        return _.uniq([...SESSSION_LABELS, ...this.uniqueSetOfExerciseLabels()]);
     }
 
     public get milesCompleted(): number {
