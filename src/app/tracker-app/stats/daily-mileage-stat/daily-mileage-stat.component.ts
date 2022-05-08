@@ -17,6 +17,7 @@ export class DailyMileageStatComponent implements OnInit {
     private isTodayDone: boolean = false;
     private today: Date = new Date();
     public goalComplete: boolean = false;
+    public milesCompletedToday: number = 0;
     public completed = faCheck
 
     constructor(private trackerService: TrackerService) { }
@@ -30,6 +31,17 @@ export class DailyMileageStatComponent implements OnInit {
         this.isTodayDone = this.exercises.some(ex => (ex.date.getDay() + 1) === (this.today.getDate() + 1));
         this.daysRemaining = this.calculateDaysRemaining();
         this.dailyGoal = this.calculateDailyGoal();
+        this.milesCompletedToday = this.calculateMilesCompletedToday();
+    }
+
+    public calculateMilesCompletedToday(): number {
+        const todaysExercise = this.trackerService.allExercises.filter(ex => ex.date.getDate() === this.today.getDate());
+
+        if (todaysExercise.length > 0) {
+            return todaysExercise.reduce((accumulator, current) => accumulator + current.miles, 0);
+        } else {
+            return 0;
+        }
     }
 
     public calculateDaysRemaining(): number {
