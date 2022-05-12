@@ -45,7 +45,7 @@ export class DailyMileageStatComponent implements OnInit {
     }
 
     public calculateDaysRemaining(): number {
-        return this.trackerService.pcConfig.numberOfDays - (this.today.getDate() + (this.isTodayDone ? 1 : 0));
+        return this.trackerService.pcConfig.numberOfDays - (this.today.getDate() - 1);
     }
 
     public calculateDailyGoal(): number {
