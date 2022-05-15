@@ -22,6 +22,7 @@ import { ConfigComponent } from './config/config.component';
 import { DebugComponent } from '../shared/debug/debug.component';
 import { MileCountStatComponent } from './stats/mile-count-stat/mile-count-stat.component';
 import { DailyMileageStatComponent } from './stats/daily-mileage-stat/daily-mileage-stat.component';
+import { WeeklyMilesProgressComponent } from './weekly-miles-progress/weekly-miles-progress.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { DailyMileageStatComponent } from './stats/daily-mileage-stat/daily-mile
     ConfigComponent,
     DebugComponent,
     MileCountStatComponent,
-    DailyMileageStatComponent
+    DailyMileageStatComponent,
+    WeeklyMilesProgressComponent
   ],
   imports: [
     CommonModule,

@@ -79,12 +79,6 @@ export class TrackerService {
         localStorage.setItem(this.exerciseCacheKey, this.stringifiedExercises());
     }
 
-    public bulkAddExercise(exercise: ExerciseSession, bulkAddCount: number): void {
-        for (let i = 0; i < bulkAddCount; i++) {
-            this.addExercise(exercise);
-        }
-    }
-
     public addExercise(exercise: ExerciseSession): void {
         exercise.label = exercise.label.replace(',', '');
 
