@@ -17,9 +17,9 @@ export class WeeklyMilesProgressComponent implements OnInit {
     }
 
     public calculateWeeklyMileage(): number {
-        const weekInDays: number = 7;
+        const weekInDaysExcludingToday: number = 6;
         const lastWeek = new Date();
-        lastWeek.setDate(this.today.getDate() - weekInDays);
+        lastWeek.setDate(this.today.getDate() - weekInDaysExcludingToday);
         const weeksExercises = this.trackerService.allExercises.filter(ex => ex.date > lastWeek && ex.date <= this.today);
 
         return weeksExercises.reduce((accumulator, current) => accumulator + current.miles, 0);
