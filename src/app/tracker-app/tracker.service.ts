@@ -27,7 +27,7 @@ export class TrackerService {
     public get allExercises(): ExerciseSession[] {
         return this._allExercises.sort(
             (a: ExerciseSession, b: ExerciseSession) => {
-                return +a.date - +b.date;
+                return +b.date - +a.date;
         });
     }
 
@@ -66,7 +66,7 @@ export class TrackerService {
 
         this._allExercises.sort(
             (a: ExerciseSession, b: ExerciseSession) => {
-                return +a.date - +b.date;
+                return +b.date - +a.date;
             });
         }
     }
