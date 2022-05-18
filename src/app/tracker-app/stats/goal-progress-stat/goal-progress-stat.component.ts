@@ -25,11 +25,11 @@ export class GoalProgressStatComponent implements OnInit {
         switch(true) {
         case this.goalProgress < 33:
             return 'danger';
-        case this.goalProgress > 33 && this.goalProgress < 66:
+        case this.goalProgress >= 33 && this.goalProgress < 66:
             return 'info';
-        case this.goalProgress > 66:
+        case this.goalProgress >= 66:
             return 'success';
-        default:    
+        default:  
             return 'danger';
         }
     }

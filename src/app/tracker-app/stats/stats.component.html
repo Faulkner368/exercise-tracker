@@ -14,7 +14,7 @@
   <div class="col-12 col-md-3 mb-4 mb-md-0">
     <div class="card stats__card">
       <et-daily-mileage-stat
-        header="Initial Goal"
+        header="Initial today: done / goal"
         [goal]="trackerService.pcConfig.initialGoalinMiles"
         [progress]="trackerService.milesCompleted"
       ></et-daily-mileage-stat>
@@ -23,7 +23,7 @@
   <div class="col-12 col-md-3 mb-4 mb-md-0">
     <div class="card stats__card">
       <et-daily-mileage-stat
-        header="Main Goal"
+        header="Main today: done / goal"
         [goal]="trackerService.pcConfig.goalInMiles"
         [progress]="trackerService.milesCompleted"
       ></et-daily-mileage-stat>
@@ -32,7 +32,7 @@
   <div class="col-12 col-md-3">
     <div class="card stats__card">
       <et-daily-mileage-stat
-        header="Stretch Goal"
+        header="Stretch today: done / goal"
         [goal]="trackerService.pcConfig.stretchGoalInMiles"
         [progress]="trackerService.milesCompleted"
       ></et-daily-mileage-stat>
