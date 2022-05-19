@@ -36,8 +36,8 @@ export class TrackerService {
     }
 
     public get milesCompleted(): number {
-        return this.allExercises.reduce((accumulator, current) => 
-        accumulator + current.miles, 0);
+        return +(this.allExercises.reduce((accumulator, current) => 
+        accumulator + current.miles, 0)).toFixed(1);
     }
 
     private loadConfig(): void {
