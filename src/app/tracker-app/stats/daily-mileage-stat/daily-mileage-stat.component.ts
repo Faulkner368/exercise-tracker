@@ -28,14 +28,14 @@ export class DailyMileageStatComponent implements OnInit {
 
     public ngOnInit(): void {
         this.goalComplete = this.progress >= this.goal;
-        this.isTodayDone = this.exercises.some(ex => ex.date.getDate() === this.today.getDate());
+        this.isTodayDone = this.exercises.some(ex => new Date(ex.date).getDate() === this.today.getDate());
         this.daysRemaining = this.calculateDaysRemaining();
         this.dailyGoal = this.calculateDailyGoal();
         this.milesCompletedToday = this.calculateMilesCompletedToday();
     }
 
     public calculateMilesCompletedToday(): number {
-        const todaysExercise = this.trackerService.allExercises.filter(ex => ex.date.getDate() === this.today.getDate());
+        const todaysExercise = this.trackerService.allExercises.filter(ex => new Date(ex.date).getDate() === this.today.getDate());
 
         if (todaysExercise.length > 0) {
             return todaysExercise.reduce((accumulator, current) => accumulator + current.miles, 0);
