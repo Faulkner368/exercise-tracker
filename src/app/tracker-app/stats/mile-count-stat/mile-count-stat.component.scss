@@ -19,3 +19,9 @@
     font-weight: 400;
   }
 }
+
+.stats__goal-complete {
+  position: absolute;
+  top: 0;
+  right: math.div($gap, 2);
+}

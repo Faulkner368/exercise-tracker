@@ -149,7 +149,7 @@ export class TrackerService {
 
     private instantiateExerciseFromCSVRow(row: string): ExerciseSession {
         const cells = row.split(',');
-        return new ExerciseSession({ label: cells[0], expiryDate: new Date(cells[1]), calories: cells[2], comment: cells[3] })
+        return new ExerciseSession({ label: cells[0], date: new Date(cells[1]), miles: +cells[2] })
     }
 
     private refreshLoadedDataAndTearDown(): void {
